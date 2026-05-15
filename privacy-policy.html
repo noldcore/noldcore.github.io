@@ -1,10 +1,1051 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <title>Privacy Policy</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#07111f" />
+  <meta name="description" content="Privacy Policy for NoldCore games and services." />
+  <meta property="og:title" content="NoldCore — Privacy Policy" />
+  <meta property="og:description" content="How NoldCore collects, uses, stores, and protects data in its games and services." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/assets/logo_NoldCore_01.png" />
+  <title>NoldCore — Privacy Policy</title>
+
+  <style>
+    :root {
+      --bg: #050a12;
+      --bg-soft: #07111f;
+      --card: rgba(13, 28, 50, 0.72);
+      --card-strong: rgba(18, 42, 75, 0.86);
+      --text: #edf6ff;
+      --muted: #96a8bd;
+      --blue: #1b8cff;
+      --blue-2: #55b7ff;
+      --line: rgba(116, 185, 255, 0.18);
+      --success: #67f5c8;
+      --warning: #ffd166;
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+      --radius: 28px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 15% 12%, rgba(27, 140, 255, 0.24), transparent 32rem),
+        radial-gradient(circle at 82% 18%, rgba(85, 183, 255, 0.14), transparent 28rem),
+        linear-gradient(135deg, var(--bg), #08182c 54%, #030712);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+      background-size: 64px 64px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent 75%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      position: relative;
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 28px 0;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+
+    .mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(85, 183, 255, 0.42);
+      border-radius: 14px;
+      background:
+        linear-gradient(145deg, rgba(27, 140, 255, 0.18), rgba(3, 7, 18, 0.72)),
+        radial-gradient(circle at 35% 25%, rgba(255,255,255,0.18), transparent 40%);
+      box-shadow: 0 0 38px rgba(27, 140, 255, 0.28);
+      overflow: hidden;
+    }
+
+    .brand-logo {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      padding: 4px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      padding: 10px 12px;
+      border-radius: 999px;
+      transition: 180ms ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+      background: rgba(255,255,255,0.07);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      padding: 68px 0 48px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 22px;
+      padding: 9px 13px;
+      color: var(--blue-2);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(13, 28, 50, 0.52);
+      backdrop-filter: blur(16px);
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .pulse {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: var(--success);
+      box-shadow: 0 0 22px rgba(103, 245, 200, 0.72);
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 900px;
+      font-size: clamp(3.2rem, 8vw, 6.4rem);
+      line-height: 0.9;
+      letter-spacing: -0.085em;
+    }
+
+    .gradient-text {
+      display: block;
+      background: linear-gradient(90deg, #ffffff, #9ed5ff 45%, var(--blue));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      max-width: 780px;
+      margin: 26px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.28rem);
+      line-height: 1.7;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 19px;
+      border: 1px solid rgba(85, 183, 255, 0.34);
+      border-radius: 999px;
+      font-weight: 800;
+      transition: 180ms ease;
+    }
+
+    .button.primary {
+      color: #02111f;
+      background: linear-gradient(135deg, var(--blue-2), var(--blue));
+      box-shadow: 0 16px 42px rgba(27, 140, 255, 0.32);
+    }
+
+    .button.secondary {
+      color: var(--text);
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(14px);
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.08);
+    }
+
+    section {
+      padding: 38px 0;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 22px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.15rem);
+      line-height: 1;
+      letter-spacing: -0.055em;
+    }
+
+    h3 {
+      margin: 0 0 12px;
+      color: var(--text);
+      font-size: 1.22rem;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+    }
+
+    .section-heading p {
+      max-width: 560px;
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .grid.two-columns {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid.single-column {
+      grid-template-columns: 1fr;
+    }
+
+    .card,
+    .policy-card {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--card);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.24);
+      backdrop-filter: blur(18px);
+    }
+
+    .policy-card.strong {
+      background: var(--card-strong);
+      box-shadow: var(--shadow);
+    }
+
+    .card strong,
+    .policy-card strong {
+      display: block;
+      margin-bottom: 12px;
+      font-size: 1.18rem;
+      letter-spacing: -0.02em;
+    }
+
+    .card p,
+    .policy-card p,
+    .policy-card li {
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .policy-card p {
+      margin: 0 0 14px;
+    }
+
+    .policy-card p:last-child,
+    .policy-card ul:last-child,
+    .policy-card ol:last-child {
+      margin-bottom: 0;
+    }
+
+    .policy-card ul,
+    .policy-card ol {
+      margin: 0 0 14px;
+      padding-left: 1.25rem;
+    }
+
+    .policy-card li + li {
+      margin-top: 8px;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 18px 0 0;
+    }
+
+    .tag {
+      padding: 8px 10px;
+      color: var(--blue-2);
+      border: 1px solid rgba(85,183,255,0.24);
+      border-radius: 999px;
+      background: rgba(27,140,255,0.09);
+      font-size: 0.86rem;
+      font-weight: 750;
+    }
+
+    .toc {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .toc a {
+      display: block;
+      padding: 12px 14px;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.04);
+      transition: 180ms ease;
+    }
+
+    .toc a:hover {
+      color: var(--text);
+      background: rgba(255,255,255,0.08);
+      transform: translateY(-1px);
+    }
+
+    .notice {
+      border-color: rgba(255, 209, 102, 0.32);
+      background:
+        linear-gradient(135deg, rgba(255, 209, 102, 0.08), rgba(13, 28, 50, 0.72));
+    }
+
+    .notice strong {
+      color: var(--warning);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 18px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    th,
+    td {
+      padding: 14px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+    }
+
+    th {
+      color: var(--text);
+      background: rgba(27, 140, 255, 0.1);
+      font-size: 0.92rem;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    code {
+      padding: 2px 6px;
+      color: var(--blue-2);
+      border: 1px solid rgba(85,183,255,0.24);
+      border-radius: 8px;
+      background: rgba(27,140,255,0.08);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 0.92em;
+    }
+
+    .footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 46px 0 56px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      margin-top: 54px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .footer a,
+    .policy-card a,
+    .card a {
+      color: var(--text);
+      border-bottom: 1px solid rgba(85,183,255,0.38);
+    }
+
+    @media (max-width: 880px) {
+      .nav {
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 42px;
+      }
+
+      .grid,
+      .grid.two-columns,
+      .toc {
+        grid-template-columns: 1fr;
+      }
+
+      .section-heading,
+      .footer {
+        display: block;
+      }
+
+      .section-heading p,
+      .footer-links {
+        margin-top: 18px;
+      }
+
+      table,
+      thead,
+      tbody,
+      th,
+      td,
+      tr {
+        display: block;
+      }
+
+      thead {
+        display: none;
+      }
+
+      tr {
+        border-bottom: 1px solid var(--line);
+      }
+
+      tr:last-child {
+        border-bottom: 0;
+      }
+
+      td {
+        border-bottom: 0;
+        padding: 10px 0;
+      }
+
+      td::before {
+        content: attr(data-label);
+        display: block;
+        margin-bottom: 4px;
+        color: var(--text);
+        font-weight: 800;
+      }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .card,
+      .policy-card {
+        animation: float-in 700ms ease both;
+      }
+    }
+
+    @keyframes float-in {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
-  <h1>Privacy Policy</h1>
-  <p>This app uses Google AdMob and may collect data.</p>
+  <div class="page">
+    <header class="nav" aria-label="Main navigation">
+      <a class="brand" href="/" aria-label="NoldCore Home">
+        <span class="mark" aria-hidden="true">
+          <img class="brand-logo" src="/assets/logo_NoldCore_02.png" alt="" />
+        </span>
+        <span>NoldCore</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Page sections">
+        <a href="/#games">Games</a>
+        <a href="#summary">Summary</a>
+        <a href="#rights">Your Rights</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div>
+          <span class="eyebrow"><span class="pulse"></span> Privacy-first documentation</span>
+          <h1 id="hero-title">
+            Privacy Policy.
+            <span class="gradient-text">Clear by design.</span>
+          </h1>
+          <p>
+            This Privacy Policy explains how NoldCore collects, uses, stores, shares, and protects personal data in its mobile games, websites, and related services.
+          </p>
+          <div class="actions">
+            <a class="button primary" href="mailto:privacy@noldcore.com">Privacy Request</a>
+            <a class="button secondary" href="mailto:support@noldcore.com">Contact Support</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="summary" aria-labelledby="summary-title">
+        <div class="section-heading">
+          <h2 id="summary-title">Summary</h2>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <strong>Controller</strong>
+            <p>NoldCore is the provider and data controller for its games and services, unless a third-party provider acts as its own controller under its own policy.</p>
+          </article>
+          <article class="card">
+            <strong>Game data</strong>
+            <p>Game progress may be stored locally on your device and, where enabled, through Unity Cloud Save so progress can be restored or synced.</p>
+          </article>
+          <article class="card">
+            <strong>Ads, analytics and purchases</strong>
+            <p>Rewarded ads may be served through Google AdMob, analytics may be processed through Firebase, and purchases are handled by Apple or Google.</p>
+          </article>
+        </div>
+
+        <div class="policy-card strong" style="margin-top: 18px;">
+          <strong>Last updated: May 15, 2026</strong>
+          <p>
+            This policy is written for players in the European Union, the United Kingdom, Switzerland, the United States, Canada, Brazil, and other regions where NoldCore games are made available.
+          </p>
+          <div class="toc" aria-label="Privacy Policy table of contents">
+            <a href="#controller">1. Controller</a>
+            <a href="#scope">2. Scope</a>
+            <a href="#data-we-process">3. Data We Process</a>
+            <a href="#legal-bases">4. Legal Bases</a>
+            <a href="#ads-analytics">5. Ads & Analytics</a>
+            <a href="#cloud-save">6. Save Games</a>
+            <a href="#iap">7. In-App Purchases</a>
+            <a href="#third-parties">8. Third Parties</a>
+            <a href="#rights">9. Your Rights</a>
+            <a href="#children">10. Children</a>
+            <a href="#security">11. Security</a>
+            <a href="#contact">12. Contact</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="controller" aria-labelledby="controller-title">
+        <div class="section-heading">
+          <h2 id="controller-title">1. Controller and Contact</h2>
+        </div>
+
+        <div class="grid two-columns">
+          <article class="policy-card">
+            <h3>Data Controller</h3>
+            <p><strong>NoldCore</strong></p>
+            <p>
+              Country: Germany<br />
+              Postal address: <code>[Add full business/legal address before publishing]</code>
+            </p>
+            <p>
+              NoldCore decides why and how personal data is processed in its games and services, unless this policy clearly states that a third-party provider acts independently under its own privacy terms.
+            </p>
+          </article>
+
+          <article class="policy-card">
+            <h3>Contact</h3>
+            <p>
+              Support: <a href="mailto:support@noldcore.com">Contact Support</a><br />
+              Privacy requests: <a href="mailto:privacy@noldcore.com">Submit a Privacy Request</a>
+            </p>
+            <p>
+              Data Protection Officer: <code>[Not appointed / add details if legally required or voluntarily appointed]</code>
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="scope" aria-labelledby="scope-title">
+        <div class="section-heading">
+          <h2 id="scope-title">2. Scope of This Policy</h2>
+        </div>
+
+        <div class="policy-card">
+          <p>This Privacy Policy applies to:</p>
+          <ul>
+            <li>NoldCore mobile games.</li>
+            <li>NoldCore websites, including pages hosted for support, legal information, app-ads.txt, and privacy information.</li>
+            <li>Support, privacy, and business communication with NoldCore.</li>
+            <li>Game-related services such as local save games, cloud save, analytics, advertising, consent management, and in-app purchase validation where used.</li>
+          </ul>
+          <p>
+            This policy does not replace the privacy policies of Apple, Google, Unity, Firebase, AdMob, payment processors, or other third-party services. Those providers may process data under their own terms and privacy policies.
+          </p>
+        </div>
+      </section>
+
+      <section id="data-we-process" aria-labelledby="data-title">
+        <div class="section-heading">
+          <h2 id="data-title">3. Personal Data We May Process</h2>
+        </div>
+
+        <div class="policy-card strong">
+          <table aria-label="Categories of personal data processed by NoldCore">
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Examples</th>
+                <th>Purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Category">Game progress and gameplay data</td>
+                <td data-label="Examples">Save-game state, unlocked content, currencies, upgrades, progression, settings, consent choices, timestamps, device-specific save identifiers.</td>
+                <td data-label="Purpose">To run the game, restore progress, sync progress where cloud save is enabled, prevent data loss, and provide core gameplay features.</td>
+              </tr>
+              <tr>
+                <td data-label="Category">Device and technical data</td>
+                <td data-label="Examples">Device model, operating system, app version, language, region, IP-derived coarse location, crash or diagnostic data, advertising identifiers where available and permitted.</td>
+                <td data-label="Purpose">To operate the app, fix bugs, improve stability, prevent abuse, show appropriate consent choices, and comply with platform rules.</td>
+              </tr>
+              <tr>
+                <td data-label="Category">Analytics data</td>
+                <td data-label="Examples">Session events, gameplay events, level/progression events, purchase events, retention events, approximate region, app instance identifiers.</td>
+                <td data-label="Purpose">To understand how the game is used, improve balancing, fix problems, and measure feature performance.</td>
+              </tr>
+              <tr>
+                <td data-label="Category">Advertising data</td>
+                <td data-label="Examples">Ad views, rewarded ad completion, ad interaction events, device identifiers, advertising ID, consent status, approximate location, frequency capping and measurement data.</td>
+                <td data-label="Purpose">To show rewarded ads, grant in-game rewards after completed ads, prevent fraud, measure ad performance, and support personalized or non-personalized ads depending on consent and settings.</td>
+              </tr>
+              <tr>
+                <td data-label="Category">Purchase data</td>
+                <td data-label="Examples">Purchased product ID, transaction status, receipt/token, platform store, purchase time, refund or entitlement status.</td>
+                <td data-label="Purpose">To deliver purchased items, verify entitlements, restore purchases, prevent fraud, provide support, and meet legal/accounting obligations.</td>
+              </tr>
+              <tr>
+                <td data-label="Category">Support and communication data</td>
+                <td data-label="Examples">Email address, message content, attachments you send, support history, technical details provided by you.</td>
+                <td data-label="Purpose">To respond to support requests, privacy requests, bug reports, and business inquiries.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="legal-bases" aria-labelledby="legal-bases-title">
+        <div class="section-heading">
+          <h2 id="legal-bases-title">4. Purposes and Legal Bases</h2>
+        </div>
+
+        <div class="grid two-columns">
+          <article class="policy-card">
+            <h3>Where GDPR or UK GDPR applies</h3>
+            <p>NoldCore relies on the following legal bases, depending on the feature and context:</p>
+            <ul>
+              <li><strong>Contract performance</strong> — to provide the game, save progress, deliver in-app purchases, restore purchases, and provide requested support.</li>
+              <li><strong>Consent</strong> — for personalized advertising, certain analytics or tracking features, and access to device identifiers or local storage where consent is legally required.</li>
+              <li><strong>Legitimate interests</strong> — for basic security, fraud prevention, debugging, service improvement, non-intrusive analytics where legally permitted, and business administration.</li>
+              <li><strong>Legal obligation</strong> — for accounting, tax, consumer protection, legal claims, regulatory duties, and responding to lawful requests.</li>
+            </ul>
+          </article>
+
+          <article class="policy-card">
+            <h3>Consent withdrawal</h3>
+            <p>
+              Where processing is based on consent, you can withdraw consent at any time through the in-game privacy or consent settings, through your device settings, or by contacting NoldCore.
+            </p>
+            <p>
+              Withdrawing consent does not affect processing that happened before withdrawal. Some features, such as personalized ads, may stop or switch to a more limited mode after withdrawal.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="cloud-save" aria-labelledby="cloud-save-title">
+        <div class="section-heading">
+          <h2 id="cloud-save-title">5. Local Saves and Unity Cloud Save</h2>
+        </div>
+
+        <div class="grid two-columns">
+          <article class="policy-card">
+            <h3>Local save games</h3>
+            <p>
+              NoldCore games may store save-game data locally on your device. This may include your progression, settings, in-game currencies, upgrades, tutorial progress, consent preferences, and other gameplay state.
+            </p>
+            <p>
+              Local save data usually remains on your device until you delete the app, clear app data, reset the device, or use an in-game reset/delete feature where available.
+            </p>
+          </article>
+
+          <article class="policy-card">
+            <h3>Unity Cloud Save</h3>
+            <p>
+              If cloud save is enabled, NoldCore may use Unity Cloud Save to store persistent player data in the cloud so progress can be restored, synced, or protected against device loss.
+            </p>
+            <p>
+              Cloud save data may include game progress, player identifiers, timestamps, and technical metadata required to provide the service. Unity may process this data as a service provider or processor depending on the specific service configuration.
+            </p>
+            <p>
+              Unity privacy information: <a href="https://unity.com/legal/game-player-and-app-user-privacy-policy" rel="noopener noreferrer">Unity Game Player and App User Privacy Policy</a>
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="ads-analytics" aria-labelledby="ads-title">
+        <div class="section-heading">
+          <h2 id="ads-title">6. Rewarded Ads, AdMob and Firebase Analytics</h2>
+        </div>
+
+        <div class="grid two-columns">
+          <article class="policy-card">
+            <h3>Rewarded Ads / Google AdMob</h3>
+            <p>
+              NoldCore games may offer rewarded ads. A rewarded ad is optional advertising content that can grant an in-game reward after successful completion, for example bonus currency, boosters, or other game benefits.
+            </p>
+            <p>
+              Ads may be provided by Google AdMob and its advertising partners. Depending on your region, consent choices, device settings, and the availability of identifiers, ads may be personalized or non-personalized.
+            </p>
+            <ul>
+              <li><strong>Personalized ads</strong> may use identifiers, approximate location, app activity, ad interactions, and other signals to select ads that may be more relevant to you.</li>
+              <li><strong>Non-personalized ads</strong> are selected using more limited signals such as approximate location, app context, language, and basic device information, but may still use identifiers for fraud prevention, frequency capping, and measurement where allowed.</li>
+              <li>Rewarded ad completion data may be processed to grant the in-game reward and prevent fraud or abuse.</li>
+            </ul>
+            <p>
+              Google privacy information: <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google Privacy Policy</a>
+            </p>
+          </article>
+
+          <article class="policy-card">
+            <h3>Firebase Analytics</h3>
+            <p>
+              NoldCore may use Firebase Analytics / Google Analytics for Firebase to understand how players use the game, measure feature performance, improve balancing, detect technical issues, and improve future versions.
+            </p>
+            <p>
+              Analytics may include app instance identifiers, device and app information, session events, gameplay events, purchase events, and approximate region. NoldCore does not use Firebase Analytics to intentionally collect directly identifying information such as your name, postal address, or payment card details.
+            </p>
+            <p>
+              Firebase privacy information: <a href="https://firebase.google.com/support/privacy" rel="noopener noreferrer">Privacy and Security in Firebase</a>
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="consent" aria-labelledby="consent-title">
+        <div class="section-heading">
+          <h2 id="consent-title">7. Consent and Privacy Settings</h2>
+        </div>
+
+        <div class="policy-card">
+          <p>
+            Where legally required, NoldCore will ask for consent before using cookies, mobile identifiers, local storage, personalized advertising, or certain analytics and tracking technologies. This is especially relevant for users in the European Economic Area, the United Kingdom, and Switzerland.
+          </p>
+          <p>
+            You can change available privacy choices through the in-game privacy or consent settings, platform-level device settings, or by contacting NoldCore. Depending on platform and region, options may include:
+          </p>
+          <ul>
+            <li>Accept or reject personalized advertising.</li>
+            <li>Switch to non-personalized ads where available.</li>
+            <li>Limit analytics or advertising features where supported.</li>
+            <li>Reset or restrict your device advertising identifier.</li>
+            <li>Request access, deletion, correction, restriction, objection, or portability of applicable personal data.</li>
+          </ul>
+          <p>
+            Some processing that is strictly necessary for security, fraud prevention, purchase delivery, app functionality, or legal compliance may continue even if optional consent is withdrawn.
+          </p>
+        </div>
+      </section>
+
+      <section id="iap" aria-labelledby="iap-title">
+        <div class="section-heading">
+          <h2 id="iap-title">8. In-App Purchases</h2>
+        </div>
+
+        <div class="grid two-columns">
+          <article class="policy-card">
+            <h3>Apple App Store and Google Play</h3>
+            <p>
+              NoldCore games may offer in-app purchases. Purchases are processed through the Apple App Store or Google Play, depending on your device and distribution channel.
+            </p>
+            <p>
+              NoldCore may receive purchase-related information needed to deliver and restore purchased content, such as product ID, transaction status, receipt or purchase token, platform, purchase time, and entitlement state.
+            </p>
+          </article>
+
+          <article class="policy-card">
+            <h3>No own payment card processing</h3>
+            <p>
+              NoldCore does not directly collect, store, or process your payment card number, bank account details, Apple ID password, Google account password, or comparable store payment credentials.
+            </p>
+            <p>
+              Refunds, chargebacks, payment authentication, taxes collected by the store, and billing support may be handled by Apple or Google under their own terms and privacy policies.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="third-parties" aria-labelledby="third-parties-title">
+        <div class="section-heading">
+          <h2 id="third-parties-title">9. Third-Party SDKs and Service Providers</h2>
+        </div>
+
+        <div class="policy-card strong" style="margin-top: 18px;">
+          <table aria-label="Third-party SDK placeholder table">
+            <thead>
+              <tr>
+                <th>Provider / SDK</th>
+                <th>Purpose</th>
+                <th>Data categories</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Provider / SDK">Google AdMob</td>
+                <td data-label="Purpose">Rewarded ads, ad delivery, ad measurement, fraud prevention, frequency capping, personalized and non-personalized advertising.</td>
+                <td data-label="Data categories">Device identifiers, advertising ID, IP-derived approximate location, ad interactions, app activity, consent status, diagnostics.</td>
+                <td data-label="Status">Expected / verify final SDK configuration.</td>
+              </tr>
+              <tr>
+                <td data-label="Provider / SDK">Firebase Analytics / Google Analytics for Firebase</td>
+                <td data-label="Purpose">Analytics, gameplay measurement, balancing, feature improvement, diagnostics.</td>
+                <td data-label="Data categories">App instance ID, device information, app events, session data, approximate location, purchase events where enabled.</td>
+                <td data-label="Status">Expected / verify final SDK configuration.</td>
+              </tr>
+              <tr>
+                <td data-label="Provider / SDK">Unity Cloud Save</td>
+                <td data-label="Purpose">Cloud save-game storage, restore and sync progression.</td>
+                <td data-label="Data categories">Player identifiers, save-game data, timestamps, technical metadata.</td>
+                <td data-label="Status">Expected / verify final Unity Gaming Services configuration.</td>
+              </tr>
+              <tr>
+                <td data-label="Provider / SDK"><code>[Add SDK/provider]</code></td>
+                <td data-label="Purpose"><code>[Add purpose]</code></td>
+                <td data-label="Data categories"><code>[Add data categories]</code></td>
+                <td data-label="Status"><code>[Add status/link]</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="sharing" aria-labelledby="sharing-title">
+        <div class="section-heading">
+          <h2 id="sharing-title">10. Sharing, International Transfers and Retention</h2>
+        </div>
+
+        <div class="grid">
+          <article class="policy-card">
+            <h3>Sharing</h3>
+            <p>NoldCore may share personal data with service providers and platform partners where needed to operate the game, serve ads, process analytics, deliver purchases, provide cloud save, respond to support, prevent fraud, comply with law, or protect rights.</p>
+            <p>NoldCore does not sell your direct contact details to data brokers.</p>
+          </article>
+
+          <article class="policy-card">
+            <h3>International transfers</h3>
+            <p>Data may be processed in Germany, the European Union, the United Kingdom, the United States, Canada, and other countries where NoldCore, platform providers, or service providers operate.</p>
+            <p>Where required, NoldCore relies on appropriate safeguards such as adequacy decisions, standard contractual clauses, data processing agreements, or comparable legal mechanisms.</p>
+          </article>
+
+          <article class="policy-card">
+            <h3>Retention</h3>
+            <p>NoldCore keeps personal data only as long as reasonably necessary for the purposes described in this policy, unless a longer period is required or permitted by law.</p>
+            <p>Examples: local saves remain until deleted; support emails are kept as long as needed to resolve the request; purchase records may be retained for tax, accounting, fraud prevention, and legal claim periods.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="rights" aria-labelledby="rights-title">
+        <div class="section-heading">
+          <h2 id="rights-title">11. Your Privacy Rights</h2>
+        </div>
+
+        <div class="grid two-columns">
+          <article class="policy-card">
+            <h3>EU / EEA / UK / Switzerland</h3>
+            <p>Subject to legal conditions and exceptions, you may have the right to:</p>
+            <ul>
+              <li>Access your personal data.</li>
+              <li>Correct inaccurate or incomplete data.</li>
+              <li>Delete personal data.</li>
+              <li>Restrict processing.</li>
+              <li>Object to processing based on legitimate interests or direct marketing.</li>
+              <li>Receive data portability where applicable.</li>
+              <li>Withdraw consent at any time where processing is based on consent.</li>
+              <li>Lodge a complaint with a competent data protection authority.</li>
+            </ul>
+          </article>
+
+          <article class="policy-card">
+            <h3>United States / California and similar state laws</h3>
+            <p>Depending on your state and whether the relevant law applies to NoldCore, you may have rights such as:</p>
+            <ul>
+              <li>Know or access categories and specific pieces of personal information.</li>
+              <li>Request deletion of personal information.</li>
+              <li>Request correction of inaccurate personal information.</li>
+              <li>Opt out of sale, sharing, or targeted advertising where applicable.</li>
+              <li>Limit use of sensitive personal information where applicable.</li>
+              <li>Not be discriminated against for exercising privacy rights.</li>
+            </ul>
+            <p>
+              NoldCore does not knowingly sell personal information for money. Some advertising or analytics activities may be considered “sharing,” “targeted advertising,” or “sale” under certain US privacy laws. Available opt-out choices will be provided through in-game privacy settings, device settings, or by contacting NoldCore.
+            </p>
+          </article>
+
+          <article class="policy-card">
+            <h3>Canada</h3>
+            <p>Depending on the applicable Canadian privacy law, you may have the right to access your personal information, request correction, withdraw consent subject to legal or contractual restrictions, and challenge NoldCore’s compliance with privacy obligations.</p>
+          </article>
+
+          <article class="policy-card">
+            <h3>Brazil</h3>
+            <p>Where Brazil’s LGPD applies, you may have rights such as confirmation of processing, access, correction, anonymization, blocking or deletion of unnecessary or excessive data, portability, information about sharing, withdrawal of consent, and review of certain automated decisions where applicable.</p>
+          </article>
+        </div>
+
+        <div class="policy-card strong" style="margin-top: 18px;">
+          <h3>How to exercise your rights</h3>
+          <p>
+            Send your request through the <a href="mailto:privacy@noldcore.com">privacy request contact link</a>. NoldCore may need to verify your identity and may ask for information required to locate your data, such as your player ID, app version, platform, approximate date of use, or purchase transaction details.
+          </p>
+          <p>
+            NoldCore will respond within the time required by applicable law. Some requests may be refused or limited where legal exceptions apply, for example for fraud prevention, security, legal claims, accounting records, or where NoldCore cannot verify the request.
+          </p>
+        </div>
+      </section>
+
+      <section id="children" aria-labelledby="children-title">
+        <div class="section-heading">
+          <h2 id="children-title">12. Children’s Privacy</h2>
+        </div>
+
+        <div class="policy-card">
+          <p>
+            NoldCore games are not intended for children under 13 years of age, unless a specific game, store page, or age rating clearly states otherwise and appropriate child-protection measures are implemented.
+          </p>
+          <p>
+            NoldCore does not knowingly collect personal data from children under 13 without appropriate parental consent where required by law. If NoldCore learns that it has collected personal data from a child in a way that violates applicable law, NoldCore will take reasonable steps to delete or disable that data as required.
+          </p>
+          <p>
+            Parents or guardians who believe that a child has provided personal data to NoldCore can contact NoldCore through the <a href="mailto:privacy@noldcore.com">privacy request contact link</a>.
+          </p>
+          <p>
+            For regions with higher digital-consent ages or additional child privacy rules, NoldCore will apply the relevant local requirements where legally required.
+          </p>
+        </div>
+      </section>
+
+      <section id="security" aria-labelledby="security-title">
+        <div class="section-heading">
+          <h2 id="security-title">13. Security</h2>
+        </div>
+
+        <div class="policy-card">
+          <p>
+            NoldCore uses reasonable technical and organizational measures designed to protect personal data against unauthorized access, loss, misuse, alteration, and disclosure. Measures may include platform security controls, access restrictions, encrypted transport where supported, secure account practices, and limiting access to data to what is necessary.
+          </p>
+          <p>
+            No app, website, cloud service, device, or network can be guaranteed to be 100% secure. You are responsible for keeping your device, platform account, and email account secure.
+          </p>
+        </div>
+      </section>
+
+      <section id="updates" aria-labelledby="updates-title">
+        <div class="section-heading">
+          <h2 id="updates-title">14. Changes to This Privacy Policy</h2>
+        </div>
+
+        <div class="policy-card">
+          <p>
+            NoldCore may update this Privacy Policy from time to time, for example when new games, features, SDKs, advertising partners, analytics tools, cloud services, or legal requirements change.
+          </p>
+          <p>
+            The “Last updated” date at the top of this page indicates when the policy was last changed. Material changes may be communicated in the game, on the website, through platform notices, or by other appropriate means where required.
+          </p>
+        </div>
+      </section>
+
+      <section id="contact" aria-labelledby="contact-title">
+        <div class="section-heading">
+          <h2 id="contact-title">15. Contact</h2>
+        </div>
+
+        <div class="grid two-columns">
+          <article class="card">
+            <strong>Privacy</strong>
+            <p><a href="mailto:privacy@noldcore.com">Submit a Privacy Request</a></p>
+          </article>
+          <article class="card">
+            <strong>Support</strong>
+            <p><a href="mailto:support@noldcore.com">Contact Support</a></p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>© <span id="year"></span> NoldCore. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="mailto:support@noldcore.com">Support</a>
+        <a href="mailto:privacy@noldcore.com">Privacy</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
