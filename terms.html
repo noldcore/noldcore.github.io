@@ -1,1 +1,883 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#07111f" />
+  <link rel="icon" href="/assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/site.webmanifest">
+  <meta name="description" content="Terms of Use for NoldCore games, websites, in-app purchases, virtual items, and digital content." />
+  <meta property="og:title" content="NoldCore — Terms" />
+  <meta property="og:description" content="Terms for using NoldCore games, websites, in-app purchases, virtual items, and digital content." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/assets/logo_NoldCore_01.png" />
+  <title>NoldCore — Terms</title>
 
+  <style>
+    :root {
+      --bg: #050a12;
+      --bg-soft: #07111f;
+      --card: rgba(13, 28, 50, 0.72);
+      --card-strong: rgba(18, 42, 75, 0.86);
+      --text: #edf6ff;
+      --muted: #96a8bd;
+      --blue: #1b8cff;
+      --blue-2: #55b7ff;
+      --line: rgba(116, 185, 255, 0.18);
+      --success: #67f5c8;
+      --warning: #ffd166;
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+      --radius: 28px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 15% 12%, rgba(27, 140, 255, 0.24), transparent 32rem),
+        radial-gradient(circle at 82% 18%, rgba(85, 183, 255, 0.14), transparent 28rem),
+        linear-gradient(135deg, var(--bg), #08182c 54%, #030712);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+      background-size: 64px 64px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent 75%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      position: relative;
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 28px 0;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+
+    .mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(85, 183, 255, 0.42);
+      border-radius: 14px;
+      background:
+        linear-gradient(145deg, rgba(27, 140, 255, 0.18), rgba(3, 7, 18, 0.72)),
+        radial-gradient(circle at 35% 25%, rgba(255,255,255,0.18), transparent 40%);
+      box-shadow: 0 0 38px rgba(27, 140, 255, 0.28);
+      overflow: hidden;
+    }
+
+    .brand-logo {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      padding: 4px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      padding: 10px 12px;
+      border-radius: 999px;
+      transition: 180ms ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+      background: rgba(255,255,255,0.07);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      padding: 68px 0 48px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 22px;
+      padding: 9px 13px;
+      color: var(--blue-2);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(13, 28, 50, 0.52);
+      backdrop-filter: blur(16px);
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .pulse {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: var(--success);
+      box-shadow: 0 0 22px rgba(103, 245, 200, 0.72);
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 900px;
+      font-size: clamp(3.2rem, 8vw, 6.4rem);
+      line-height: 0.9;
+      letter-spacing: -0.085em;
+    }
+
+    .gradient-text {
+      display: block;
+      background: linear-gradient(90deg, #ffffff, #9ed5ff 45%, var(--blue));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      max-width: 780px;
+      margin: 26px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.28rem);
+      line-height: 1.7;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 19px;
+      border: 1px solid rgba(85, 183, 255, 0.34);
+      border-radius: 999px;
+      font-weight: 800;
+      transition: 180ms ease;
+    }
+
+    .button.primary {
+      color: #02111f;
+      background: linear-gradient(135deg, var(--blue-2), var(--blue));
+      box-shadow: 0 16px 42px rgba(27, 140, 255, 0.32);
+    }
+
+    .button.secondary {
+      color: var(--text);
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(14px);
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.08);
+    }
+
+    section {
+      padding: 38px 0;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 22px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.15rem);
+      line-height: 1;
+      letter-spacing: -0.055em;
+    }
+
+    h3 {
+      margin: 0 0 12px;
+      color: var(--text);
+      font-size: 1.22rem;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+    }
+
+    .section-heading p {
+      max-width: 560px;
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .grid.two-columns {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid.single-column {
+      grid-template-columns: 1fr;
+    }
+
+    .card,
+    .policy-card {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--card);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.24);
+      backdrop-filter: blur(18px);
+    }
+
+    .policy-card.strong {
+      background: var(--card-strong);
+      box-shadow: var(--shadow);
+    }
+
+    .card strong,
+    .policy-card strong {
+      display: block;
+      margin-bottom: 12px;
+      font-size: 1.18rem;
+      letter-spacing: -0.02em;
+    }
+
+    .card p,
+    .policy-card p,
+    .policy-card li {
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .policy-card p {
+      margin: 0 0 14px;
+    }
+
+    .policy-card p:last-child,
+    .policy-card ul:last-child,
+    .policy-card ol:last-child {
+      margin-bottom: 0;
+    }
+
+    .policy-card ul,
+    .policy-card ol {
+      margin: 0 0 14px;
+      padding-left: 1.25rem;
+    }
+
+    .policy-card li + li {
+      margin-top: 8px;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 18px 0 0;
+    }
+
+    .tag {
+      padding: 8px 10px;
+      color: var(--blue-2);
+      border: 1px solid rgba(85,183,255,0.24);
+      border-radius: 999px;
+      background: rgba(27,140,255,0.09);
+      font-size: 0.86rem;
+      font-weight: 750;
+    }
+
+    .toc {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .toc a {
+      display: block;
+      padding: 12px 14px;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.04);
+      transition: 180ms ease;
+    }
+
+    .toc a:hover {
+      color: var(--text);
+      background: rgba(255,255,255,0.08);
+      transform: translateY(-1px);
+    }
+
+    .notice {
+      border-color: rgba(255, 209, 102, 0.32);
+      background:
+        linear-gradient(135deg, rgba(255, 209, 102, 0.08), rgba(13, 28, 50, 0.72));
+    }
+
+    .notice strong {
+      color: var(--warning);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 18px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    th,
+    td {
+      padding: 14px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+    }
+
+    th {
+      color: var(--text);
+      background: rgba(27, 140, 255, 0.1);
+      font-size: 0.92rem;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    code {
+      padding: 2px 6px;
+      color: var(--blue-2);
+      border: 1px solid rgba(85,183,255,0.24);
+      border-radius: 8px;
+      background: rgba(27,140,255,0.08);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 0.92em;
+    }
+
+    .footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 46px 0 56px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      margin-top: 54px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .footer a,
+    .policy-card a,
+    .card a {
+      color: var(--text);
+      border-bottom: 1px solid rgba(85,183,255,0.38);
+    }
+
+    @media (max-width: 880px) {
+      .nav {
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 42px;
+      }
+
+      .grid,
+      .grid.two-columns,
+      .toc {
+        grid-template-columns: 1fr;
+      }
+
+      .section-heading,
+      .footer {
+        display: block;
+      }
+
+      .section-heading p,
+      .footer-links {
+        margin-top: 18px;
+      }
+
+      table,
+      thead,
+      tbody,
+      th,
+      td,
+      tr {
+        display: block;
+      }
+
+      thead {
+        display: none;
+      }
+
+      tr {
+        border-bottom: 1px solid var(--line);
+      }
+
+      tr:last-child {
+        border-bottom: 0;
+      }
+
+      td {
+        border-bottom: 0;
+        padding: 10px 0;
+      }
+
+      td::before {
+        content: attr(data-label);
+        display: block;
+        margin-bottom: 4px;
+        color: var(--text);
+        font-weight: 800;
+      }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .card,
+      .policy-card {
+        animation: float-in 700ms ease both;
+      }
+    }
+
+    @keyframes float-in {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="nav" aria-label="Main navigation">
+      <a class="brand" href="/" aria-label="NoldCore Home">
+        <span class="mark" aria-hidden="true">
+          <img class="brand-logo" src="/assets/logo_NoldCore_02.png" alt="" />
+        </span>
+        <span>NoldCore</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Page sections">
+        <a href="/">Home</a>
+        <a href="#summary">Summary</a>
+        <a href="#purchases">Purchases</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div>
+          <span class="eyebrow"><span class="pulse"></span> Terms of Use</span>
+          <h1 id="hero-title">
+            Terms.
+            <span class="gradient-text">Fair play, clear rules.</span>
+          </h1>
+          <p>
+            These Terms explain the basic rules for using NoldCore games, websites, in-app purchases, virtual currencies, game boosters, game items, and other digital content.
+          </p>
+          <div class="actions">
+            <a class="button primary" href="mailto:support@noldcore.com">Contact Support</a>
+            <a class="button secondary" href="/privacy-policy.html">Privacy Policy</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="summary" aria-labelledby="summary-title">
+        <div class="section-heading">
+          <h2 id="summary-title">Summary</h2>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <strong>Store purchases</strong>
+            <p>In-app purchases are handled by the Apple App Store or Google Play, depending on your device and distribution channel.</p>
+          </article>
+          <article class="card">
+            <strong>Digital content</strong>
+            <p>Virtual currencies, game boosters, game items, and similar digital content are only usable inside the relevant game and have no real-world cash value.</p>
+          </article>
+          <article class="card">
+            <strong>Refunds</strong>
+            <p>Refund requests, payment issues, billing support, and chargebacks are generally handled by Apple or Google under their applicable store terms.</p>
+          </article>
+        </div>
+
+        <div class="policy-card strong" style="margin-top: 18px;">
+          <strong>Last updated: May 15, 2026</strong>
+          <p>
+            These Terms are intentionally compact. They do not remove mandatory consumer rights that may apply under your local law, and they work together with the rules of the platform or app store where you downloaded the game.
+          </p>
+          <div class="toc" aria-label="Terms table of contents">
+            <a href="#provider">1. Provider</a>
+            <a href="#scope">2. Scope</a>
+            <a href="#license">3. License</a>
+            <a href="#purchases">4. In-App Purchases</a>
+            <a href="#virtual-items">5. Virtual Items</a>
+            <a href="#refunds">6. Refunds</a>
+            <a href="#ads">7. Ads & Rewards</a>
+            <a href="#rules">8. Fair Use</a>
+            <a href="#availability">9. Availability</a>
+            <a href="#liability">10. Liability</a>
+            <a href="#changes">11. Changes</a>
+            <a href="#contact">12. Contact</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="provider" aria-labelledby="provider-title">
+        <div class="section-heading">
+          <h2 id="provider-title">1. Provider and Contact</h2>
+        </div>
+
+        <div class="grid two-columns">
+          <article class="policy-card">
+            <h3>Provider</h3>
+            <p><strong>NoldCore</strong></p>
+            <p>
+              Country: Germany<br />
+              Postal address: <code>[Add full business/legal address before publishing]</code>
+            </p>
+            <p>
+              NoldCore provides mobile games, websites, support pages, privacy information, app-ads.txt information, and related digital services.
+            </p>
+          </article>
+
+          <article class="policy-card">
+            <h3>Contact</h3>
+            <p>
+              Support: <a href="mailto:support@noldcore.com">Contact Support</a><br />
+              Privacy requests: <a href="mailto:privacy@noldcore.com">Submit a Privacy Request</a>
+            </p>
+            <p>
+              For purchase problems, please first use the refund and billing options provided by the Apple App Store or Google Play.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="scope" aria-labelledby="scope-title">
+        <div class="section-heading">
+          <h2 id="scope-title">2. Scope of These Terms</h2>
+        </div>
+
+        <div class="policy-card">
+          <p>These Terms apply to:</p>
+          <ul>
+            <li>NoldCore mobile games, including Cargo Port Idle and future NoldCore titles.</li>
+            <li>NoldCore websites and legal pages.</li>
+            <li>Game features such as progression, virtual currencies, game boosters, game items, rewarded ads, local save data, cloud save features, and in-app purchases.</li>
+            <li>Support and communication related to NoldCore games and services.</li>
+          </ul>
+          <p>
+            If you download a NoldCore game from the Apple App Store, Google Play, or another distribution platform, the platform’s own terms, payment rules, refund rules, and account rules also apply. If those platform rules conflict with these Terms for platform-specific matters, the platform rules may take priority for that specific matter.
+          </p>
+        </div>
+      </section>
+
+      <section id="license" aria-labelledby="license-title">
+        <div class="section-heading">
+          <h2 id="license-title">3. Limited License</h2>
+        </div>
+
+        <div class="grid two-columns">
+          <article class="policy-card">
+            <h3>Your use of the game</h3>
+            <p>
+              NoldCore grants you a personal, limited, revocable, non-exclusive, non-transferable license to download, install, and use the game for your private entertainment, subject to these Terms and the applicable platform terms.
+            </p>
+            <p>
+              You do not receive ownership of the game, source code, assets, trademarks, design, systems, virtual items, or other NoldCore content.
+            </p>
+          </article>
+
+          <article class="policy-card">
+            <h3>Intellectual property</h3>
+            <p>
+              All NoldCore names, logos, game names, gameplay systems, visual assets, audio, text, interface designs, and related materials are owned by NoldCore or its licensors, unless otherwise stated.
+            </p>
+            <p>
+              You may not copy, sell, redistribute, modify, reverse engineer, extract assets from, or commercially exploit NoldCore games or content except where permitted by mandatory law or explicit written permission.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="purchases" aria-labelledby="purchases-title">
+        <div class="section-heading">
+          <h2 id="purchases-title">4. In-App Purchases</h2>
+        </div>
+
+        <div class="policy-card strong">
+          <p>
+            NoldCore games may offer optional in-app purchases such as virtual currencies, game boosters, premium features, ad-related benefits, game items, bundles, or other digital content.
+          </p>
+          <ul>
+            <li>Purchases are processed through the Apple App Store, Google Play, or the relevant distribution platform.</li>
+            <li>NoldCore does not directly collect or store your payment card number, bank account details, Apple ID password, Google account password, or comparable store payment credentials.</li>
+            <li>Prices, taxes, payment authentication, receipts, invoices, billing support, and platform account rules are generally handled by the relevant store.</li>
+            <li>Purchased digital content is delivered for use only inside the relevant NoldCore game and may require the game, your device, your platform account, and the platform services to work correctly.</li>
+          </ul>
+          <p>
+            Before publishing a game with in-app purchases, product names, prices, descriptions, and store metadata should accurately describe what the player receives.
+          </p>
+        </div>
+      </section>
+
+      <section id="virtual-items" aria-labelledby="virtual-items-title">
+        <div class="section-heading">
+          <h2 id="virtual-items-title">5. Virtual Currencies, Game Boosters and Game Items</h2>
+        </div>
+
+        <div class="grid two-columns">
+          <article class="policy-card">
+            <h3>No real-world value</h3>
+            <p>
+              Virtual currencies, game boosters, game items, rewards, upgrades, progression benefits, and similar digital content have no real-world cash value. They are not money, electronic money, cryptocurrency, securities, gift cards, or stored-value products.
+            </p>
+            <p>
+              They cannot be redeemed for cash, transferred outside the game, exchanged for goods or services outside the game, sold to other players, or used as payment outside the relevant NoldCore game.
+            </p>
+          </article>
+
+          <article class="policy-card">
+            <h3>Inside the game only</h3>
+            <p>
+              Digital content is licensed for use only within the game where it was earned or purchased, unless NoldCore explicitly states otherwise.
+            </p>
+            <p>
+              Game balance, item values, booster effects, progression systems, and reward amounts may change over time to improve gameplay, fix bugs, prevent abuse, or support long-term balancing.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="refunds" aria-labelledby="refunds-title">
+        <div class="section-heading">
+          <h2 id="refunds-title">6. Refunds and Purchase Support</h2>
+        </div>
+
+        <div class="policy-card">
+          <p>
+            Refund requests for in-app purchases are generally handled by Apple, Google, or the relevant distribution platform under their own refund rules and consumer policies. Please use the refund tools provided by the store where you made the purchase.
+          </p>
+          <p>
+            NoldCore can help investigate delivery problems, missing entitlements, restore-purchase issues, or suspected purchase bugs. For support, provide your platform, app version, approximate purchase time, product name, and relevant transaction information. Do not send full payment card data or store account passwords.
+          </p>
+          <p>
+            Where mandatory consumer law gives you additional rights, those rights remain unaffected by these Terms.
+          </p>
+        </div>
+      </section>
+
+      <section id="ads" aria-labelledby="ads-title">
+        <div class="section-heading">
+          <h2 id="ads-title">7. Rewarded Ads and Game Rewards</h2>
+        </div>
+
+        <div class="grid two-columns">
+          <article class="policy-card">
+            <h3>Optional rewarded ads</h3>
+            <p>
+              NoldCore games may offer optional rewarded ads. If you choose to watch a rewarded ad and the ad is completed successfully, the game may grant an in-game reward such as bonus currency, a game booster, or another game benefit.
+            </p>
+            <p>
+              Rewards may fail or be delayed if the ad provider, network connection, platform service, or game session cannot confirm successful completion.
+            </p>
+          </article>
+
+          <article class="policy-card">
+            <h3>No guaranteed ad availability</h3>
+            <p>
+              Ads are not always available. Availability can depend on your country, device, consent choices, ad provider inventory, platform rules, technical limits, or anti-fraud systems.
+            </p>
+            <p>
+              NoldCore may limit, adjust, or remove ad rewards to prevent abuse, fix technical issues, comply with platform rules, or rebalance the game.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="rules" aria-labelledby="rules-title">
+        <div class="section-heading">
+          <h2 id="rules-title">8. Fair Use and Player Rules</h2>
+        </div>
+
+        <div class="policy-card">
+          <p>You agree not to misuse NoldCore games, websites, or services. In particular, you must not:</p>
+          <ul>
+            <li>Cheat, exploit bugs, manipulate save data, spoof purchases, fake rewarded-ad completions, or bypass progression systems.</li>
+            <li>Use bots, automation, scripts, modified clients, unauthorized tools, emulators used for abuse, or other methods that damage fair play or service integrity.</li>
+            <li>Reverse engineer, decompile, extract, scrape, copy, resell, or redistribute game content except where mandatory law allows it.</li>
+            <li>Interfere with servers, SDKs, analytics, advertising systems, purchase validation, cloud save, or security systems.</li>
+            <li>Use NoldCore services for unlawful, harmful, abusive, fraudulent, or rights-infringing activity.</li>
+          </ul>
+          <p>
+            NoldCore may limit access, reset affected progress, remove fraudulently obtained items, disable features, or take other reasonable action if misuse, fraud, or technical abuse is detected.
+          </p>
+        </div>
+      </section>
+
+      <section id="availability" aria-labelledby="availability-title">
+        <div class="section-heading">
+          <h2 id="availability-title">9. Availability, Updates and Save Data</h2>
+        </div>
+
+        <div class="grid">
+          <article class="policy-card">
+            <h3>Availability</h3>
+            <p>NoldCore aims to keep its games and websites available, but availability is not guaranteed. Services may be interrupted by maintenance, platform outages, SDK issues, network problems, device issues, or force majeure events.</p>
+          </article>
+
+          <article class="policy-card">
+            <h3>Updates</h3>
+            <p>NoldCore may update, rebalance, patch, add, remove, or change features, rewards, boosters, item values, game systems, interfaces, SDKs, and technical requirements over time.</p>
+          </article>
+
+          <article class="policy-card">
+            <h3>Save data</h3>
+            <p>Local or cloud save data can be affected by device changes, app deletion, platform account changes, technical problems, corrupted files, unsupported versions, or user-initiated resets. Keep your platform account and device secure.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="liability" aria-labelledby="liability-title">
+        <div class="section-heading">
+          <h2 id="liability-title">10. Liability and Consumer Rights</h2>
+        </div>
+
+        <div class="policy-card notice">
+          <strong>Consumer rights stay intact</strong>
+          <p>
+            Nothing in these Terms limits mandatory rights that cannot legally be excluded, including statutory consumer rights, warranty rights, liability for intent or gross negligence where applicable, liability for injury to life, body, or health where applicable, and rights under mandatory platform or local law.
+          </p>
+          <p>
+            To the maximum extent permitted by applicable law, NoldCore is not liable for indirect damages, lost profits, lost data, loss of progress, platform outages, third-party service failures, unavailable ads, unavailable store services, or problems caused by unsupported devices, modified software, misuse, or factors outside NoldCore’s reasonable control.
+          </p>
+        </div>
+      </section>
+
+      <section id="privacy" aria-labelledby="privacy-title">
+        <div class="section-heading">
+          <h2 id="privacy-title">11. Privacy</h2>
+        </div>
+
+        <div class="policy-card">
+          <p>
+            NoldCore’s <a href="/privacy-policy.html">Privacy Policy</a> explains how personal data may be collected, used, stored, shared, and protected in connection with NoldCore games, websites, advertising, analytics, cloud save, support, and purchases.
+          </p>
+        </div>
+      </section>
+
+      <section id="changes" aria-labelledby="changes-title">
+        <div class="section-heading">
+          <h2 id="changes-title">12. Changes to These Terms</h2>
+        </div>
+
+        <div class="policy-card">
+          <p>
+            NoldCore may update these Terms from time to time, for example when games, features, SDKs, stores, monetization features, legal requirements, or business details change.
+          </p>
+          <p>
+            The “Last updated” date at the top of this page indicates when these Terms were last changed. Material changes may be communicated in the game, on the website, through platform notices, or by other appropriate means where required.
+          </p>
+        </div>
+      </section>
+
+      <section id="contact" aria-labelledby="contact-title">
+        <div class="section-heading">
+          <h2 id="contact-title">13. Contact</h2>
+        </div>
+
+        <div class="grid two-columns">
+          <article class="card">
+            <strong>Support</strong>
+            <p><a href="mailto:support@noldcore.com">Contact Support</a></p>
+          </article>
+          <article class="card">
+            <strong>Privacy</strong>
+            <p><a href="mailto:privacy@noldcore.com">Submit a Privacy Request</a></p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>© <span id="year"></span> NoldCore. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/privacy-policy.html">Privacy Policy</a>
+        <a href="mailto:support@noldcore.com">Support</a>
+        <a href="mailto:privacy@noldcore.com">Privacy</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
