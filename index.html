@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
   <link rel="manifest" href="/assets/site.webmanifest">
-  <meta name="description" content="NoldCore is an independent game studio creating polished mobile games, starting with Cargo Port Idle." />
+  <meta name="description" content="NoldCore is an independent game studio creating polished mobile games, including Cargo Port Idle and Worldcoil: Snake Arcade." />
   <meta property="og:title" content="NoldCore" />
   <meta property="og:description" content="Independent mobile games. Built with care, systems, and style." />
   <meta property="og:type" content="website" />
@@ -424,70 +424,194 @@
       line-height: 1.65;
     }
 
-    .game-card {
+    /* Games: responsive, game-specific cards with distinct visual identities. */
+    .games-list {
       display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 26px;
-      padding: 26px;
-      border: 1px solid var(--line);
-      border-radius: calc(var(--radius) + 8px);
-      background: var(--card-strong);
-      box-shadow: var(--shadow);
-      overflow: hidden;
+      gap: 20px;
     }
 
-    .app-icon {
-      min-height: 280px;
+    .game-item {
+      --game-accent: var(--blue-2);
+      --game-glow: rgba(85, 183, 255, 0.18);
+      position: relative;
+      display: grid;
+      grid-template-columns: 190px minmax(0, 1fr);
+      align-items: stretch;
+      gap: 30px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: calc(var(--radius) + 4px);
+      background: linear-gradient(115deg, rgba(18, 42, 75, 0.9), rgba(9, 21, 39, 0.94));
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.26);
+      overflow: hidden;
+      transition: border-color 200ms ease, box-shadow 200ms ease;
+    }
+
+    .game-item::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--game-accent), transparent 75%);
+    }
+
+    .game-item:hover {
+      border-color: var(--game-accent);
+      box-shadow: 0 22px 64px rgba(0, 0, 0, 0.34), 0 0 30px var(--game-glow);
+    }
+
+    .worldcoil-game {
+      --game-accent: var(--success);
+      --game-glow: rgba(103, 245, 200, 0.15);
+    }
+
+    .game-art {
+      position: relative;
       display: grid;
       place-items: center;
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 30px;
+      min-height: 195px;
+      isolation: isolate;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 22px;
       background:
-        radial-gradient(circle at 30% 20%, rgba(255,255,255,0.18), transparent 25%),
-        linear-gradient(145deg, rgba(85,183,255,0.16), rgba(3,7,18,0.78));
+        radial-gradient(circle at 65% 28%, var(--game-glow), transparent 62%),
+        linear-gradient(145deg, rgba(31, 70, 111, 0.64), rgba(4, 12, 25, 0.96));
       overflow: hidden;
     }
 
-    .project-logo {
-      width: min(82%, 360px);
-      max-height: 220px;
-      object-fit: contain;
-      display: block;
-      filter: drop-shadow(0 0 46px rgba(27, 140, 255, 0.36));
+    .worldcoil-game .game-art {
+      background:
+        radial-gradient(circle at 73% 28%, rgba(107, 87, 238, 0.3), transparent 54%),
+        radial-gradient(circle at 25% 75%, var(--game-glow), transparent 65%),
+        linear-gradient(145deg, rgba(23, 45, 72, 0.84), rgba(4, 12, 25, 0.96));
+    }
+
+    .game-art::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+      background-size: 24px 24px;
+      mask-image: linear-gradient(135deg, rgba(0, 0, 0, 0.85), transparent);
+    }
+
+    .game-monogram {
+      color: var(--game-accent);
+      font-size: clamp(3.5rem, 7vw, 5.2rem);
+      font-weight: 900;
+      letter-spacing: -0.1em;
+      line-height: 1;
+      text-shadow: 0 0 38px var(--game-glow);
+    }
+
+    .game-art-label {
+      position: absolute;
+      bottom: 15px;
+      left: 16px;
+      color: rgba(237, 246, 255, 0.72);
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
     }
 
     .game-copy {
       align-self: center;
+      min-width: 0;
+      padding: 4px 0;
+    }
+
+    .game-index {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: var(--game-accent);
+      font-size: 0.73rem;
+      font-weight: 800;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+    }
+
+    .game-copy h3 {
+      margin: 0;
+      font-size: clamp(1.85rem, 3.6vw, 2.8rem);
+      line-height: 1.08;
+      letter-spacing: -0.055em;
     }
 
     .tag-row {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin: 18px 0 24px;
+      margin: 16px 0 18px;
     }
 
     .tag {
-      padding: 8px 10px;
-      color: var(--blue-2);
-      border: 1px solid rgba(85,183,255,0.24);
+      padding: 7px 10px;
+      color: var(--game-accent);
+      border: 1px solid var(--game-glow);
       border-radius: 999px;
-      background: rgba(27,140,255,0.09);
-      font-size: 0.86rem;
+      background: var(--game-glow);
+      font-size: 0.78rem;
       font-weight: 750;
     }
 
-    .game-copy h3 {
+    .game-copy p {
+      max-width: 650px;
       margin: 0;
-      font-size: clamp(2rem, 4vw, 3.25rem);
-      line-height: 0.98;
-      letter-spacing: -0.055em;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 1rem;
     }
 
-    .game-copy p {
+    .game-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 23px;
+    }
+
+    .game-policy {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 44px;
+      padding: 0 17px;
+      color: var(--game-accent);
+      border: 1px solid var(--game-accent);
+      border-radius: 999px;
+      background: var(--game-glow);
+      font-size: 0.9rem;
+      font-weight: 800;
+      transition: background 180ms ease, transform 180ms ease;
+    }
+
+    .game-policy:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .game-contact {
       color: var(--muted);
-      line-height: 1.7;
-      font-size: 1.04rem;
+      font-size: 0.88rem;
+      font-weight: 700;
+      transition: color 180ms ease;
+    }
+
+    .game-contact:hover {
+      color: var(--text);
+    }
+
+    .game-policy:focus-visible,
+    .game-contact:focus-visible {
+      outline: 2px solid var(--game-accent);
+      outline-offset: 4px;
     }
 
     .footer {
@@ -520,8 +644,7 @@
         display: none;
       }
 
-      .hero,
-      .game-card {
+      .hero {
         grid-template-columns: 1fr;
       }
 
@@ -548,16 +671,28 @@
         margin-top: 18px;
       }
 
-      .project-logo {
-        width: min(88%, 320px);
-        max-height: 190px;
+    }
+
+    @media (max-width: 640px) {
+      .game-item {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 18px;
+      }
+
+      .game-art {
+        min-height: 150px;
+      }
+
+      .game-monogram {
+        font-size: 4.5rem;
       }
     }
 
     @media (prefers-reduced-motion: no-preference) {
       .device-card,
       .card,
-      .game-card {
+      .game-item {
         animation: float-in 700ms ease both;
       }
 
@@ -607,7 +742,7 @@
             readable visuals, and a strong focus on long-term progression.
           </p>
           <div class="actions">
-            <a class="button primary" href="#games">Explore the game</a>
+            <a class="button primary" href="#games">Explore our games</a>
             <a class="button secondary" href="mailto:support@noldcore.com">Contact support</a>
           </div>
         </div>
@@ -659,31 +794,69 @@
 
       <section id="games" aria-labelledby="games-title">
         <div class="section-heading">
-          <h2 id="games-title">Current project</h2>
+          <h2 id="games-title">Games</h2>
+          <p>Explore our games and find the privacy policy for each title.</p>
         </div>
 
-        <article class="game-card">
-          <div class="app-icon" aria-hidden="true">
-            <img class="project-logo" src="/assets/logo_NoldCore_01.png" alt="" />
-          </div>
-          <div class="game-copy">
-            <h3>Cargo Port Idle</h3>
-            <div class="tag-row" aria-label="Game tags">
-              <span class="tag">Idle</span>
-              <span class="tag">Automation</span>
-              <span class="tag">Harbor Economy</span>
-              <span class="tag">iOS</span>
+        <div class="games-list" role="list">
+          <article class="game-item cargo-game" role="listitem" aria-labelledby="cargo-title">
+            <div class="game-art" aria-hidden="true">
+              <span class="game-monogram">CP</span>
+              <span class="game-art-label">01 / Idle</span>
             </div>
-            <p>
-              Build up a cargo harbor, unlock producers, automate workflows with managers,
-              optimize upgrades, and keep the port economy moving.
-            </p>
-            <div class="actions">
-              <a class="button primary" href="mailto:support@noldcore.com?subject=Cargo%20Port%20Idle">Ask about Cargo Port Idle</a>
-              <a class="button secondary" href="/privacy-policy.html">Privacy Policy</a>
+            <div class="game-copy">
+              <span class="game-index">01 / NoldCore Games</span>
+              <h3 id="cargo-title">Cargo Port Idle</h3>
+              <div class="tag-row" aria-label="Cargo Port Idle tags">
+                <span class="tag">Idle</span>
+                <span class="tag">Automation</span>
+                <span class="tag">Harbor Economy</span>
+                <span class="tag">iOS</span>
+              </div>
+              <p>
+                Build up a cargo harbor, unlock producers, automate workflows with managers,
+                optimize upgrades, and keep the port economy moving.
+              </p>
+              <div class="game-actions">
+                <a class="game-policy" href="/cargoportidle/privacy-policy.html">
+                  Privacy Policy <span aria-hidden="true">↗</span>
+                </a>
+                <a class="game-contact" href="mailto:support@noldcore.com?subject=Cargo%20Port%20Idle">
+                  Ask about Cargo Port Idle <span aria-hidden="true">→</span>
+                </a>
+              </div>
             </div>
-          </div>
-        </article>
+          </article>
+
+          <article class="game-item worldcoil-game" role="listitem" aria-labelledby="worldcoil-title">
+            <div class="game-art" aria-hidden="true">
+              <span class="game-monogram">W</span>
+              <span class="game-art-label">02 / Arcade</span>
+            </div>
+            <div class="game-copy">
+              <span class="game-index">02 / NoldCore Games</span>
+              <h3 id="worldcoil-title">Worldcoil: Snake Arcade</h3>
+              <div class="tag-row" aria-label="Worldcoil: Snake Arcade tags">
+                <span class="tag">Arcade</span>
+                <span class="tag">Snake</span>
+                <span class="tag">Themed Levels</span>
+                <span class="tag">Mobile</span>
+              </div>
+              <p>
+                Classic snake gameplay reimagined with vibrant worlds, unique obstacles,
+                and fast-paced arcade challenges.
+              </p>
+              <div class="game-actions">
+                <a class="game-policy" href="/worldcoil/privacy-policy.html">
+                  Privacy Policy <span aria-hidden="true">↗</span>
+                </a>
+                <a class="game-contact" href="mailto:support@noldcore.com?subject=Worldcoil%3A%20Snake%20Arcade">
+                  Ask about Worldcoil <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
       </section>
 
       <section id="contact" aria-labelledby="contact-title">
@@ -710,7 +883,6 @@
     <footer class="footer">
       <div>© <span id="year"></span> NoldCore. All rights reserved.</div>
       <div class="footer-links">
-        <a href="/privacy-policy.html">Privacy Policy</a>
         <a href="/terms.html">Terms</a>
         <a href="mailto:support@noldcore.com">Support</a>
       </div>
